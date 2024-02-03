@@ -1,4 +1,4 @@
-# Install script for directory: /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googletest
+# Install script for directory: /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googletest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -41,7 +41,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest/GTestTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest/GTestTargets.cmake"
-         "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets.cmake")
+         "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest/GTestTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -50,36 +50,36 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest" TYPE FILE FILES "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest" TYPE FILE FILES "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest" TYPE FILE FILES "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets-noconfig.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest" TYPE FILE FILES "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/CMakeFiles/Export/lib/cmake/GTest/GTestTargets-noconfig.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/GTest" TYPE FILE FILES
-    "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/GTestConfigVersion.cmake"
-    "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/GTestConfig.cmake"
+    "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/GTestConfigVersion.cmake"
+    "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/GTestConfig.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googletest/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googletest/include/")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/hgfs/share/github/gtestdemo/build/lib/libgtest.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/hgfs/share/github/allcode/gtestdemo/build/lib/libgtest.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/hgfs/share/github/gtestdemo/build/lib/libgtest_main.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/mnt/hgfs/share/github/allcode/gtestdemo/build/lib/libgtest_main.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/gtest.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/gtest.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/gtest_main.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googletest/generated/gtest_main.pc")
 endif()
 

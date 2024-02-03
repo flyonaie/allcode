@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/mnt/hgfs/share/github/gtestdemo/main.cc
+/mnt/hgfs/share/github/allcode/gtestdemo/main.cc
 stdio.h
 -
 

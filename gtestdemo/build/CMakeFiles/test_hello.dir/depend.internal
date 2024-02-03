@@ -22,4 +22,4 @@ CMakeFiles/test_hello.dir/hello_test.cc.o
  ../third_party/googletest-release-1.10.0/googletest/include/gtest/internal/gtest-port.h
  ../third_party/googletest-release-1.10.0/googletest/include/gtest/internal/gtest-string.h
  ../third_party/googletest-release-1.10.0/googletest/include/gtest/internal/gtest-type-util.h
- /mnt/hgfs/share/github/gtestdemo/hello_test.cc
+ /mnt/hgfs/share/github/allcode/gtestdemo/hello_test.cc

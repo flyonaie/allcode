@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/share/github/gtestdemo
+CMAKE_SOURCE_DIR = /mnt/hgfs/share/github/allcode/gtestdemo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/hgfs/share/github/gtestdemo/build
+CMAKE_BINARY_DIR = /mnt/hgfs/share/github/allcode/gtestdemo/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,14 +137,14 @@ test/fast: test
 
 # The main all target
 all: cmake_check_build_system
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/share/github/gtestdemo/build/CMakeFiles /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock/CMakeFiles/progress.marks
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/share/github/gtestdemo/build/CMakeFiles 0
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock/CMakeFiles/progress.marks
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/clean
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/clean
 .PHONY : clean
 
 # The main clean target
@@ -154,22 +154,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/preinstall
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/preinstall
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/rule:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/rule
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/rule
 .PHONY : third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/rule
 
 # Convenience name for target.
@@ -179,12 +179,12 @@ gmock_main: third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_ma
 
 # fast build rule for target.
 gmock_main/fast:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build
 .PHONY : gmock_main/fast
 
 # Convenience name for target.
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/rule:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/rule
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f CMakeFiles/Makefile2 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/rule
 .PHONY : third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/rule
 
 # Convenience name for target.
@@ -194,7 +194,7 @@ gmock: third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/rul
 
 # fast build rule for target.
 gmock/fast:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build
 .PHONY : gmock/fast
 
 src/gmock-all.o: src/gmock-all.cc.o
@@ -203,7 +203,7 @@ src/gmock-all.o: src/gmock-all.cc.o
 
 # target to build an object file
 src/gmock-all.cc.o:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o
 .PHONY : src/gmock-all.cc.o
 
 src/gmock-all.i: src/gmock-all.cc.i
@@ -212,7 +212,7 @@ src/gmock-all.i: src/gmock-all.cc.i
 
 # target to preprocess a source file
 src/gmock-all.cc.i:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.i
 .PHONY : src/gmock-all.cc.i
 
 src/gmock-all.s: src/gmock-all.cc.s
@@ -221,7 +221,7 @@ src/gmock-all.s: src/gmock-all.cc.s
 
 # target to generate assembly for a file
 src/gmock-all.cc.s:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.s
 .PHONY : src/gmock-all.cc.s
 
 src/gmock_main.o: src/gmock_main.cc.o
@@ -230,7 +230,7 @@ src/gmock_main.o: src/gmock_main.cc.o
 
 # target to build an object file
 src/gmock_main.cc.o:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 .PHONY : src/gmock_main.cc.o
 
 src/gmock_main.i: src/gmock_main.cc.i
@@ -239,7 +239,7 @@ src/gmock_main.i: src/gmock_main.cc.i
 
 # target to preprocess a source file
 src/gmock_main.cc.i:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
 .PHONY : src/gmock_main.cc.i
 
 src/gmock_main.s: src/gmock_main.cc.s
@@ -248,7 +248,7 @@ src/gmock_main.s: src/gmock_main.cc.s
 
 # target to generate assembly for a file
 src/gmock_main.cc.s:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(MAKE) -f third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
 .PHONY : src/gmock_main.cc.s
 
 # Help Target
@@ -283,6 +283,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

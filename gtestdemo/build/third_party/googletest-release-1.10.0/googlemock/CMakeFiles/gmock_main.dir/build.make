@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/hgfs/share/github/gtestdemo
+CMAKE_SOURCE_DIR = /mnt/hgfs/share/github/allcode/gtestdemo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/hgfs/share/github/gtestdemo/build
+CMAKE_BINARY_DIR = /mnt/hgfs/share/github/allcode/gtestdemo/build
 
 # Include any dependencies generated for this target.
 include third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/depend.make
@@ -59,16 +59,16 @@ include third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.d
 
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/flags.make
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: ../third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/hgfs/share/github/gtestdemo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
-	cd /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc
 
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gmock_main.dir/src/gmock_main.cc.i"
-	cd /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc > CMakeFiles/gmock_main.dir/src/gmock_main.cc.i
 
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gmock_main.dir/src/gmock_main.cc.s"
-	cd /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googlemock/src/gmock_main.cc -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.s
 
 # Object files for target gmock_main
 gmock_main_OBJECTS = \
@@ -80,9 +80,9 @@ gmock_main_EXTERNAL_OBJECTS =
 lib/libgmock_main.a: third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o
 lib/libgmock_main.a: third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build.make
 lib/libgmock_main.a: third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/hgfs/share/github/gtestdemo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgmock_main.a"
-	cd /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
-	cd /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library ../../../lib/libgmock_main.a"
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean_target.cmake
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/gmock_main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build: lib/libgmock_main.a
@@ -90,10 +90,10 @@ third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build
 .PHONY : third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/build
 
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/clean:
-	cd /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock && $(CMAKE_COMMAND) -P CMakeFiles/gmock_main.dir/cmake_clean.cmake
 .PHONY : third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/clean
 
 third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/depend:
-	cd /mnt/hgfs/share/github/gtestdemo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/share/github/gtestdemo /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googlemock /mnt/hgfs/share/github/gtestdemo/build /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock /mnt/hgfs/share/github/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
+	cd /mnt/hgfs/share/github/allcode/gtestdemo/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /mnt/hgfs/share/github/allcode/gtestdemo /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googlemock /mnt/hgfs/share/github/allcode/gtestdemo/build /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock /mnt/hgfs/share/github/allcode/gtestdemo/build/third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : third_party/googletest-release-1.10.0/googlemock/CMakeFiles/gmock_main.dir/depend
 

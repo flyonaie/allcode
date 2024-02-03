@@ -6,5 +6,5 @@ CXX_FLAGS =  -pipe -std=c++11   -Wall -Wextra -pedantic -Werror -std=gnu++11
 
 CXX_DEFINES = -DDEBUG -DREAL_COOL_ENGINEER
 
-CXX_INCLUDES = -I/mnt/hgfs/share/github/gtestdemo/. -isystem /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googletest/include -isystem /mnt/hgfs/share/github/gtestdemo/third_party/googletest-release-1.10.0/googletest 
+CXX_INCLUDES = -I/mnt/hgfs/share/github/allcode/gtestdemo/. -isystem /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googletest/include -isystem /mnt/hgfs/share/github/allcode/gtestdemo/third_party/googletest-release-1.10.0/googletest 
 

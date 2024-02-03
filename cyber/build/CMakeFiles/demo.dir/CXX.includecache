@@ -6,3 +6,7 @@
 
 #IncludeRegexTransform: 
 
+/mnt/hgfs/share/github/allcode/cyber/base/main.cc
+stdio.h
+-
+

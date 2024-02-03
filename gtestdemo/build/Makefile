@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_world
+
+# Build rule for target.
+test_world: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_world
+.PHONY : test_world
+
+# fast build rule for target.
+test_world/fast:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/build
+.PHONY : test_world/fast
+
+#=============================================================================
 # Target rules for targets named test_my_gtest_demo_1
 
 # Build rule for target.
@@ -339,6 +352,33 @@ my_gtest_demo_1.cc.s:
 	$(MAKE) -f CMakeFiles/test_my_gtest_demo_1.dir/build.make CMakeFiles/test_my_gtest_demo_1.dir/my_gtest_demo_1.cc.s
 .PHONY : my_gtest_demo_1.cc.s
 
+world_test.o: world_test.cc.o
+
+.PHONY : world_test.o
+
+# target to build an object file
+world_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/world_test.cc.o
+.PHONY : world_test.cc.o
+
+world_test.i: world_test.cc.i
+
+.PHONY : world_test.i
+
+# target to preprocess a source file
+world_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/world_test.cc.i
+.PHONY : world_test.cc.i
+
+world_test.s: world_test.cc.s
+
+.PHONY : world_test.s
+
+# target to generate assembly for a file
+world_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/world_test.cc.s
+.PHONY : world_test.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -351,6 +391,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... test_world"
 	@echo "... test_my_gtest_demo_1"
 	@echo "... test_hello"
 	@echo "... install/local"
@@ -368,6 +409,9 @@ help:
 	@echo "... my_gtest_demo_1.o"
 	@echo "... my_gtest_demo_1.i"
 	@echo "... my_gtest_demo_1.s"
+	@echo "... world_test.o"
+	@echo "... world_test.i"
+	@echo "... world_test.s"
 .PHONY : help
 
 

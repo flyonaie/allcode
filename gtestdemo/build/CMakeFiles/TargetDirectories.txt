@@ -4,6 +4,7 @@
 /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/rebuild_cache.dir
 /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/edit_cache.dir
 /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/test.dir
+/mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/test_world.dir
 /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/test_my_gtest_demo_1.dir
 /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/test_hello.dir
 /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles/install/local.dir

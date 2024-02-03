@@ -1,0 +1,1 @@
+/usr/bin/c++   -pipe -std=c++11   CMakeFiles/test_world.dir/world_test.cc.o  -o test_world  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

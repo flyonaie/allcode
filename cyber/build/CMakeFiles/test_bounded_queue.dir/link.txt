@@ -1,0 +1,1 @@
+/usr/bin/c++   -pipe -std=c++11   CMakeFiles/test_bounded_queue.dir/base/bounded_queue_test.cc.o  -o test_bounded_queue  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

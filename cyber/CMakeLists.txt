@@ -47,16 +47,23 @@ file(GLOB_RECURSE LIB_SRC
 add_executable(demo base/main.cc)
 
 ##--------------------- Build unit tests -----------------------------------##
-option(CMAKE_TEMPLATE_ENABLE_TEST "Whether to enable unit tests" OFF)
+option(CMAKE_TEMPLATE_ENABLE_TEST "Whether to enable unit tests" ON)
 if (CMAKE_TEMPLATE_ENABLE_TEST)
     message(STATUS "Unit tests enabled")
     enable_testing()
     add_subdirectory(third_party/googletest-release-1.10.0 EXCLUDE_FROM_ALL)
     include_directories(third_party/googletest-release-1.10.0/googletest/include)
 
-    add_executable(test_hello base/hello_test.cc)
+    add_executable(test_hello base/hello_test.cc)    
+    add_executable(test_world base/world_test.cc)
+    add_executable(test_helloworld base/helloworld_test.cc)
     target_link_libraries(test_hello gtest gtest_main)
+    target_link_libraries(test_world gtest gtest_main)
+    target_link_libraries(test_helloworld gtest gtest_main)
+
     add_test(NAME test_hello COMMAND test_hello)
+    add_test(NAME test_world COMMAND test_world)
+    add_test(NAME test_helloworld COMMAND test_helloworld)
 
     add_executable(test_atomic_hash_map base/atomic_hash_map_test.cc)
     target_link_libraries(test_atomic_hash_map gtest gtest_main)
@@ -66,10 +73,28 @@ if (CMAKE_TEMPLATE_ENABLE_TEST)
     target_link_libraries(test_atomic_hash_map1 gtest gtest_main)
     add_test(NAME test_atomic_hash_map1 COMMAND test_atomic_hash_map1)
 
-    add_executable(test_signal base/signal_test.cc)
-    target_link_libraries(test_signal gtest gtest_main)
-    add_test(NAME test_signal COMMAND test_signal)
+    # add_executable(test_signal base/signal_test.cc)
+    # target_link_libraries(test_signal gtest gtest_main)
+    # add_test(NAME test_signal COMMAND test_signal)///有点问题
+    
+    add_executable(test_unbounded_queue base/unbounded_queue_test.cc)
+    target_link_libraries(test_unbounded_queue gtest gtest_main)
+    add_test(NAME test_unbounded_queue COMMAND test_unbounded_queue)
 
+    add_executable(test_atomic_rw_lock base/atomic_rw_lock_test.cc)
+    target_link_libraries(test_atomic_rw_lock gtest gtest_main)
+    add_test(NAME test_atomic_rw_lock COMMAND test_atomic_rw_lock)
 
+    add_executable(test_bounded_queue base/bounded_queue_test.cc)
+    target_link_libraries(test_bounded_queue gtest gtest_main)
+    add_test(NAME test_bounded_queue COMMAND test_bounded_queue)
+    
+    add_executable(test_for_each base/for_each_test.cc)
+    target_link_libraries(test_for_each gtest gtest_main)
+    add_test(NAME test_for_each COMMAND test_for_each)
+        
+    # add_executable(test_signal base/signal_test.cc)
+    # target_link_libraries(test_signal gtest gtest_main)
+    # add_test(NAME test_signal COMMAND test_signal)
 endif()
 

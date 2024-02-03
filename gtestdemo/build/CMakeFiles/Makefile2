@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /mnt/hgfs/share/github/allcode/gtestdemo/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_world.dir/all
 all: CMakeFiles/test_my_gtest_demo_1.dir/all
 all: CMakeFiles/test_hello.dir/all
 all: CMakeFiles/demo.dir/all
@@ -65,6 +66,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_world.dir/clean
 clean: CMakeFiles/test_my_gtest_demo_1.dir/clean
 clean: CMakeFiles/test_hello.dir/clean
 clean: CMakeFiles/demo.dir/clean
@@ -131,6 +133,34 @@ third_party/googletest-release-1.10.0/googletest/clean: third_party/googletest-r
 third_party/googletest-release-1.10.0/googletest/clean: third_party/googletest-release-1.10.0/googletest/CMakeFiles/gtest.dir/clean
 
 .PHONY : third_party/googletest-release-1.10.0/googletest/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_world.dir
+
+# All Build rule for target.
+CMakeFiles/test_world.dir/all: third_party/googletest-release-1.10.0/googletest/CMakeFiles/gtest_main.dir/all
+CMakeFiles/test_world.dir/all: third_party/googletest-release-1.10.0/googletest/CMakeFiles/gtest.dir/all
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/depend
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles --progress-num=15,16 "Built target test_world"
+.PHONY : CMakeFiles/test_world.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_world.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_world.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/hgfs/share/github/allcode/gtestdemo/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_world.dir/rule
+
+# Convenience name for target.
+test_world: CMakeFiles/test_world.dir/rule
+
+.PHONY : test_world
+
+# clean rule for target.
+CMakeFiles/test_world.dir/clean:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/clean
+.PHONY : CMakeFiles/test_world.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/test_my_gtest_demo_1.dir

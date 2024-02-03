@@ -1,0 +1,1 @@
+/usr/bin/c++   -pipe -std=c++11   CMakeFiles/test_for_each.dir/base/for_each_test.cc.o  -o test_for_each  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

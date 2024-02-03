@@ -51,10 +51,13 @@ if (CMAKE_TEMPLATE_ENABLE_TEST)
 
     add_executable(test_hello hello_test.cc)
     add_executable(test_my_gtest_demo_1 my_gtest_demo_1.cc)
+    add_executable(test_world world_test.cc)
     target_link_libraries(test_hello gtest gtest_main)
     target_link_libraries(test_my_gtest_demo_1 gtest gtest_main)
+    target_link_libraries(test_world gtest gtest_main)
 
     add_test(NAME test_hello COMMAND test_hello)
     add_test(NAME test_my_gtest_demo_1 COMMAND test_my_gtest_demo_1)
+    add_test(NAME test_world COMMAND test_world)
 endif()
 

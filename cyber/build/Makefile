@@ -56,18 +56,6 @@ CMAKE_BINARY_DIR = /mnt/hgfs/share/github/allcode/cyber/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
-
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -90,6 +78,41 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -111,29 +134,6 @@ edit_cache:
 edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,30 +168,30 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named test_atomic_hash_map1
+# Target rules for targets named demo
 
 # Build rule for target.
-test_atomic_hash_map1: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_atomic_hash_map1
-.PHONY : test_atomic_hash_map1
+demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 demo
+.PHONY : demo
 
 # fast build rule for target.
-test_atomic_hash_map1/fast:
-	$(MAKE) -f CMakeFiles/test_atomic_hash_map1.dir/build.make CMakeFiles/test_atomic_hash_map1.dir/build
-.PHONY : test_atomic_hash_map1/fast
+demo/fast:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
+.PHONY : demo/fast
 
 #=============================================================================
-# Target rules for targets named test_atomic_hash_map
+# Target rules for targets named test_unbounded_queue
 
 # Build rule for target.
-test_atomic_hash_map: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_atomic_hash_map
-.PHONY : test_atomic_hash_map
+test_unbounded_queue: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_unbounded_queue
+.PHONY : test_unbounded_queue
 
 # fast build rule for target.
-test_atomic_hash_map/fast:
-	$(MAKE) -f CMakeFiles/test_atomic_hash_map.dir/build.make CMakeFiles/test_atomic_hash_map.dir/build
-.PHONY : test_atomic_hash_map/fast
+test_unbounded_queue/fast:
+	$(MAKE) -f CMakeFiles/test_unbounded_queue.dir/build.make CMakeFiles/test_unbounded_queue.dir/build
+.PHONY : test_unbounded_queue/fast
 
 #=============================================================================
 # Target rules for targets named test_hello
@@ -207,30 +207,95 @@ test_hello/fast:
 .PHONY : test_hello/fast
 
 #=============================================================================
-# Target rules for targets named test_signal
+# Target rules for targets named test_atomic_hash_map
 
 # Build rule for target.
-test_signal: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 test_signal
-.PHONY : test_signal
+test_atomic_hash_map: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_atomic_hash_map
+.PHONY : test_atomic_hash_map
 
 # fast build rule for target.
-test_signal/fast:
-	$(MAKE) -f CMakeFiles/test_signal.dir/build.make CMakeFiles/test_signal.dir/build
-.PHONY : test_signal/fast
+test_atomic_hash_map/fast:
+	$(MAKE) -f CMakeFiles/test_atomic_hash_map.dir/build.make CMakeFiles/test_atomic_hash_map.dir/build
+.PHONY : test_atomic_hash_map/fast
 
 #=============================================================================
-# Target rules for targets named demo
+# Target rules for targets named test_world
 
 # Build rule for target.
-demo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 demo
-.PHONY : demo
+test_world: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_world
+.PHONY : test_world
 
 # fast build rule for target.
-demo/fast:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
-.PHONY : demo/fast
+test_world/fast:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/build
+.PHONY : test_world/fast
+
+#=============================================================================
+# Target rules for targets named test_atomic_hash_map1
+
+# Build rule for target.
+test_atomic_hash_map1: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_atomic_hash_map1
+.PHONY : test_atomic_hash_map1
+
+# fast build rule for target.
+test_atomic_hash_map1/fast:
+	$(MAKE) -f CMakeFiles/test_atomic_hash_map1.dir/build.make CMakeFiles/test_atomic_hash_map1.dir/build
+.PHONY : test_atomic_hash_map1/fast
+
+#=============================================================================
+# Target rules for targets named test_for_each
+
+# Build rule for target.
+test_for_each: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_for_each
+.PHONY : test_for_each
+
+# fast build rule for target.
+test_for_each/fast:
+	$(MAKE) -f CMakeFiles/test_for_each.dir/build.make CMakeFiles/test_for_each.dir/build
+.PHONY : test_for_each/fast
+
+#=============================================================================
+# Target rules for targets named test_atomic_rw_lock
+
+# Build rule for target.
+test_atomic_rw_lock: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_atomic_rw_lock
+.PHONY : test_atomic_rw_lock
+
+# fast build rule for target.
+test_atomic_rw_lock/fast:
+	$(MAKE) -f CMakeFiles/test_atomic_rw_lock.dir/build.make CMakeFiles/test_atomic_rw_lock.dir/build
+.PHONY : test_atomic_rw_lock/fast
+
+#=============================================================================
+# Target rules for targets named test_bounded_queue
+
+# Build rule for target.
+test_bounded_queue: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_bounded_queue
+.PHONY : test_bounded_queue
+
+# fast build rule for target.
+test_bounded_queue/fast:
+	$(MAKE) -f CMakeFiles/test_bounded_queue.dir/build.make CMakeFiles/test_bounded_queue.dir/build
+.PHONY : test_bounded_queue/fast
+
+#=============================================================================
+# Target rules for targets named test_helloworld
+
+# Build rule for target.
+test_helloworld: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_helloworld
+.PHONY : test_helloworld
+
+# fast build rule for target.
+test_helloworld/fast:
+	$(MAKE) -f CMakeFiles/test_helloworld.dir/build.make CMakeFiles/test_helloworld.dir/build
+.PHONY : test_helloworld/fast
 
 #=============================================================================
 # Target rules for targets named gmock_main
@@ -338,6 +403,87 @@ base/atomic_hash_map_test1.cc.s:
 	$(MAKE) -f CMakeFiles/test_atomic_hash_map1.dir/build.make CMakeFiles/test_atomic_hash_map1.dir/base/atomic_hash_map_test1.cc.s
 .PHONY : base/atomic_hash_map_test1.cc.s
 
+base/atomic_rw_lock_test.o: base/atomic_rw_lock_test.cc.o
+
+.PHONY : base/atomic_rw_lock_test.o
+
+# target to build an object file
+base/atomic_rw_lock_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_atomic_rw_lock.dir/build.make CMakeFiles/test_atomic_rw_lock.dir/base/atomic_rw_lock_test.cc.o
+.PHONY : base/atomic_rw_lock_test.cc.o
+
+base/atomic_rw_lock_test.i: base/atomic_rw_lock_test.cc.i
+
+.PHONY : base/atomic_rw_lock_test.i
+
+# target to preprocess a source file
+base/atomic_rw_lock_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_atomic_rw_lock.dir/build.make CMakeFiles/test_atomic_rw_lock.dir/base/atomic_rw_lock_test.cc.i
+.PHONY : base/atomic_rw_lock_test.cc.i
+
+base/atomic_rw_lock_test.s: base/atomic_rw_lock_test.cc.s
+
+.PHONY : base/atomic_rw_lock_test.s
+
+# target to generate assembly for a file
+base/atomic_rw_lock_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_atomic_rw_lock.dir/build.make CMakeFiles/test_atomic_rw_lock.dir/base/atomic_rw_lock_test.cc.s
+.PHONY : base/atomic_rw_lock_test.cc.s
+
+base/bounded_queue_test.o: base/bounded_queue_test.cc.o
+
+.PHONY : base/bounded_queue_test.o
+
+# target to build an object file
+base/bounded_queue_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_bounded_queue.dir/build.make CMakeFiles/test_bounded_queue.dir/base/bounded_queue_test.cc.o
+.PHONY : base/bounded_queue_test.cc.o
+
+base/bounded_queue_test.i: base/bounded_queue_test.cc.i
+
+.PHONY : base/bounded_queue_test.i
+
+# target to preprocess a source file
+base/bounded_queue_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_bounded_queue.dir/build.make CMakeFiles/test_bounded_queue.dir/base/bounded_queue_test.cc.i
+.PHONY : base/bounded_queue_test.cc.i
+
+base/bounded_queue_test.s: base/bounded_queue_test.cc.s
+
+.PHONY : base/bounded_queue_test.s
+
+# target to generate assembly for a file
+base/bounded_queue_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_bounded_queue.dir/build.make CMakeFiles/test_bounded_queue.dir/base/bounded_queue_test.cc.s
+.PHONY : base/bounded_queue_test.cc.s
+
+base/for_each_test.o: base/for_each_test.cc.o
+
+.PHONY : base/for_each_test.o
+
+# target to build an object file
+base/for_each_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_for_each.dir/build.make CMakeFiles/test_for_each.dir/base/for_each_test.cc.o
+.PHONY : base/for_each_test.cc.o
+
+base/for_each_test.i: base/for_each_test.cc.i
+
+.PHONY : base/for_each_test.i
+
+# target to preprocess a source file
+base/for_each_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_for_each.dir/build.make CMakeFiles/test_for_each.dir/base/for_each_test.cc.i
+.PHONY : base/for_each_test.cc.i
+
+base/for_each_test.s: base/for_each_test.cc.s
+
+.PHONY : base/for_each_test.s
+
+# target to generate assembly for a file
+base/for_each_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_for_each.dir/build.make CMakeFiles/test_for_each.dir/base/for_each_test.cc.s
+.PHONY : base/for_each_test.cc.s
+
 base/hello_test.o: base/hello_test.cc.o
 
 .PHONY : base/hello_test.o
@@ -364,6 +510,33 @@ base/hello_test.s: base/hello_test.cc.s
 base/hello_test.cc.s:
 	$(MAKE) -f CMakeFiles/test_hello.dir/build.make CMakeFiles/test_hello.dir/base/hello_test.cc.s
 .PHONY : base/hello_test.cc.s
+
+base/helloworld_test.o: base/helloworld_test.cc.o
+
+.PHONY : base/helloworld_test.o
+
+# target to build an object file
+base/helloworld_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_helloworld.dir/build.make CMakeFiles/test_helloworld.dir/base/helloworld_test.cc.o
+.PHONY : base/helloworld_test.cc.o
+
+base/helloworld_test.i: base/helloworld_test.cc.i
+
+.PHONY : base/helloworld_test.i
+
+# target to preprocess a source file
+base/helloworld_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_helloworld.dir/build.make CMakeFiles/test_helloworld.dir/base/helloworld_test.cc.i
+.PHONY : base/helloworld_test.cc.i
+
+base/helloworld_test.s: base/helloworld_test.cc.s
+
+.PHONY : base/helloworld_test.s
+
+# target to generate assembly for a file
+base/helloworld_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_helloworld.dir/build.make CMakeFiles/test_helloworld.dir/base/helloworld_test.cc.s
+.PHONY : base/helloworld_test.cc.s
 
 base/main.o: base/main.cc.o
 
@@ -392,32 +565,59 @@ base/main.cc.s:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/base/main.cc.s
 .PHONY : base/main.cc.s
 
-base/signal_test.o: base/signal_test.cc.o
+base/unbounded_queue_test.o: base/unbounded_queue_test.cc.o
 
-.PHONY : base/signal_test.o
+.PHONY : base/unbounded_queue_test.o
 
 # target to build an object file
-base/signal_test.cc.o:
-	$(MAKE) -f CMakeFiles/test_signal.dir/build.make CMakeFiles/test_signal.dir/base/signal_test.cc.o
-.PHONY : base/signal_test.cc.o
+base/unbounded_queue_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_unbounded_queue.dir/build.make CMakeFiles/test_unbounded_queue.dir/base/unbounded_queue_test.cc.o
+.PHONY : base/unbounded_queue_test.cc.o
 
-base/signal_test.i: base/signal_test.cc.i
+base/unbounded_queue_test.i: base/unbounded_queue_test.cc.i
 
-.PHONY : base/signal_test.i
+.PHONY : base/unbounded_queue_test.i
 
 # target to preprocess a source file
-base/signal_test.cc.i:
-	$(MAKE) -f CMakeFiles/test_signal.dir/build.make CMakeFiles/test_signal.dir/base/signal_test.cc.i
-.PHONY : base/signal_test.cc.i
+base/unbounded_queue_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_unbounded_queue.dir/build.make CMakeFiles/test_unbounded_queue.dir/base/unbounded_queue_test.cc.i
+.PHONY : base/unbounded_queue_test.cc.i
 
-base/signal_test.s: base/signal_test.cc.s
+base/unbounded_queue_test.s: base/unbounded_queue_test.cc.s
 
-.PHONY : base/signal_test.s
+.PHONY : base/unbounded_queue_test.s
 
 # target to generate assembly for a file
-base/signal_test.cc.s:
-	$(MAKE) -f CMakeFiles/test_signal.dir/build.make CMakeFiles/test_signal.dir/base/signal_test.cc.s
-.PHONY : base/signal_test.cc.s
+base/unbounded_queue_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_unbounded_queue.dir/build.make CMakeFiles/test_unbounded_queue.dir/base/unbounded_queue_test.cc.s
+.PHONY : base/unbounded_queue_test.cc.s
+
+base/world_test.o: base/world_test.cc.o
+
+.PHONY : base/world_test.o
+
+# target to build an object file
+base/world_test.cc.o:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/base/world_test.cc.o
+.PHONY : base/world_test.cc.o
+
+base/world_test.i: base/world_test.cc.i
+
+.PHONY : base/world_test.i
+
+# target to preprocess a source file
+base/world_test.cc.i:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/base/world_test.cc.i
+.PHONY : base/world_test.cc.i
+
+base/world_test.s: base/world_test.cc.s
+
+.PHONY : base/world_test.s
+
+# target to generate assembly for a file
+base/world_test.cc.s:
+	$(MAKE) -f CMakeFiles/test_world.dir/build.make CMakeFiles/test_world.dir/base/world_test.cc.s
+.PHONY : base/world_test.cc.s
 
 # Help Target
 help:
@@ -425,18 +625,23 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... demo"
+	@echo "... install/local"
+	@echo "... test_unbounded_queue"
+	@echo "... test_hello"
+	@echo "... install/strip"
+	@echo "... test_atomic_hash_map"
+	@echo "... test_world"
+	@echo "... test_atomic_hash_map1"
+	@echo "... test_for_each"
+	@echo "... test_atomic_rw_lock"
+	@echo "... test_bounded_queue"
+	@echo "... test"
+	@echo "... test_helloworld"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
-	@echo "... test_atomic_hash_map1"
-	@echo "... test_atomic_hash_map"
-	@echo "... test_hello"
-	@echo "... install/local"
-	@echo "... test_signal"
-	@echo "... demo"
 	@echo "... gmock_main"
 	@echo "... gmock"
 	@echo "... gtest_main"
@@ -447,15 +652,30 @@ help:
 	@echo "... base/atomic_hash_map_test1.o"
 	@echo "... base/atomic_hash_map_test1.i"
 	@echo "... base/atomic_hash_map_test1.s"
+	@echo "... base/atomic_rw_lock_test.o"
+	@echo "... base/atomic_rw_lock_test.i"
+	@echo "... base/atomic_rw_lock_test.s"
+	@echo "... base/bounded_queue_test.o"
+	@echo "... base/bounded_queue_test.i"
+	@echo "... base/bounded_queue_test.s"
+	@echo "... base/for_each_test.o"
+	@echo "... base/for_each_test.i"
+	@echo "... base/for_each_test.s"
 	@echo "... base/hello_test.o"
 	@echo "... base/hello_test.i"
 	@echo "... base/hello_test.s"
+	@echo "... base/helloworld_test.o"
+	@echo "... base/helloworld_test.i"
+	@echo "... base/helloworld_test.s"
 	@echo "... base/main.o"
 	@echo "... base/main.i"
 	@echo "... base/main.s"
-	@echo "... base/signal_test.o"
-	@echo "... base/signal_test.i"
-	@echo "... base/signal_test.s"
+	@echo "... base/unbounded_queue_test.o"
+	@echo "... base/unbounded_queue_test.i"
+	@echo "... base/unbounded_queue_test.s"
+	@echo "... base/world_test.o"
+	@echo "... base/world_test.i"
+	@echo "... base/world_test.s"
 .PHONY : help
 
 

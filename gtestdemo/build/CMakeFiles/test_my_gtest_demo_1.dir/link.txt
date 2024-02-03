@@ -1,0 +1,1 @@
+/usr/bin/c++   -pipe -std=c++11   CMakeFiles/test_my_gtest_demo_1.dir/my_gtest_demo_1.cc.o  -o test_my_gtest_demo_1  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

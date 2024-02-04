@@ -1,1 +1,0 @@
-/usr/bin/c++   -pipe -std=c++11   CMakeFiles/test_atomic_hash_map.dir/base/atomic_hash_map_test.cc.o  -o test_atomic_hash_map  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

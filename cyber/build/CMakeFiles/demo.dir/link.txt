@@ -1,1 +1,0 @@
-/usr/bin/c++   -pipe -std=c++11   CMakeFiles/demo.dir/base/main.cc.o  -o demo 

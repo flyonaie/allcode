@@ -1,1 +1,0 @@
-/usr/bin/c++   -pipe -std=c++11   CMakeFiles/test_helloworld.dir/base/helloworld_test.cc.o  -o test_helloworld  lib/libgtest.a lib/libgtest_main.a lib/libgtest.a -lpthread 

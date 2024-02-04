@@ -29,6 +29,61 @@ message(STATUS "Compile options for c++: ${CMAKE_CXX_FLAGS}")
 ##--------------------- Global Macros --------------------------------------##
 add_definitions(-DDEBUG -DREAL_COOL_ENGINEER)
 
+##--------------------- Deal DEPENCENCY --------------------------------##
+find_package(Threads REQUIRED)
+# find_package(PkgConfig REQUIRED)
+# find_package(fastrtps REQUIRED)
+# find_package(fastcdr REQUIRED)
+# find_package(Poco REQUIRED COMPONENTS Foundation)
+find_package(glog REQUIRED)
+find_package(Protobuf REQUIRED)
+# find_package(Python REQUIRED COMPONENTS Interpreter Development)
+# pkg_check_modules(Gflags REQUIRED gflags
+
+
+# set(Python_VERSION "${Python_VERSION_MAJOR}.${Python_VERSION_MINOR}")
+# set(Python_VERSION "${Python_VERSION}")
+# set(CYBER_PYTHON_PATH "lib/python${Python_VERSION}/site-packages/cyber/python")
+# set(CYBER_PYTHON_INTERNAL_PATH "${CYBER_PYTHON_PATH}/internal")
+# set(CYBER_PYTHON_PROTOBUF_PATH "lib/python${Python_VERSION}/site-packages/cyber/proto")
+# set(CYBER_MSGS_CACHE ON CACHE BOOL "generate cyber proto msgs flag.")
+# set(CYBER_PYTHON_LIB "/usr/lib/python3.6/config-3.6m-x86_64-linux-gnu/libpython3.6.so")
+
+if(NOT DEFINED glog_LIBRARIES)
+  set(glog_LIBRARIES "glog")
+endif()
+
+if(NOT DEFINED Uuid_LIBRARIES)
+  set(Uuid_LIBRARIES "uuid")
+endif()
+
+set(DEPENCENCY_INCLUDE_DIRS
+  # ${fastcdr_INCLUDE_DIR}
+  # ${fastrtps_INCLUDE_DIR}
+  ${Protobuf_INCLUDE_DIRS}
+  # ${Python_INCLUDE_DIRS}
+  # ${Uuid_INCLUDE_DIRS}
+  ${glog_INCLUDE_DIRS}
+  ${Gflags_INCLUDE_DIRS}
+  # ${NlohmannJson_INCLUDE_DIRS}
+)
+
+set(DEPENCENCY_LIB_DIRS
+  # ${fastcdr_LIB_DIR}
+  # ${fastrtps_LIB_DIR}
+  ${Protobuf_LIBRARIES_DIRS}
+  # ${Python_LIBRARIES_DIRS}
+  # ${Uuid_LIBRARIES_DIRS}
+  ${glog_LIBRARY_DIRS}
+  ${Gflags_LIBRARY_DIRS}
+  # ${NlohmannJson_LIBRARY_DIRS}
+)
+
+set(DEPENCENCY_LIBS
+  ${glog_LIBRARIES}
+  ${Gflags_LIBRARIES}
+)
+
 ##--------------------- Include directories --------------------------------##
 message("### include_directories: ${CMAKE_CURRENT_SOURCE_DIR}")
 include_directories(
@@ -54,6 +109,7 @@ if (CMAKE_TEMPLATE_ENABLE_TEST)
     add_subdirectory(third_party/googletest-release-1.10.0 EXCLUDE_FROM_ALL)
     include_directories(third_party/googletest-release-1.10.0/googletest/include)
 
+##--------------------- Build unit tests under base -----------------------------------##
     add_executable(test_hello base/hello_test.cc)    
     add_executable(test_world base/world_test.cc)
     add_executable(test_helloworld base/helloworld_test.cc)
@@ -96,5 +152,11 @@ if (CMAKE_TEMPLATE_ENABLE_TEST)
     # add_executable(test_signal base/signal_test.cc)
     # target_link_libraries(test_signal gtest gtest_main)
     # add_test(NAME test_signal COMMAND test_signal)
+
+    ##--------------------- Build unit tests under common-----------------------------------##
+    add_executable(test_environment common/environment_test.cc)
+    target_link_libraries(test_environment gtest gtest_main ${DEPENCENCY_LIBS})
+    add_test(NAME test_environment COMMAND test_environment)
+
 endif()
 

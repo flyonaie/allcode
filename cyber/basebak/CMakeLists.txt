@@ -30,35 +30,35 @@ message(STATUS "Compile options for c++: ${CMAKE_CXX_FLAGS}")
 add_definitions(-DDEBUG -DREAL_COOL_ENGINEER)
 
 ##--------------------- Include directories --------------------------------##
+message("### include_directories: ${CMAKE_CURRENT_SOURCE_DIR}")
 include_directories(
-  ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/../../
   ${CMAKE_CURRENT_SOURCE_DIR}/../
+  ${CMAKE_CURRENT_SOURCE_DIR}/
 )
-
 
 ##--------------------- Source files ---------------------------------------##
 file(GLOB_RECURSE CYBER_BASE_SRC
-    "cyber/base/*.cc"
+    "cyber/basebak/*.cc"
 )
+
+list(FILTER GLOB_RECURSE EXCLUDE REGEX signal_test.cc)
 
 
 # Build demo executable
-add_executable(demo main.cc)
+# add_executable(demo main.cc)
 
 ##--------------------- Build unit tests -----------------------------------##
 option(CMAKE_TEMPLATE_ENABLE_TEST "Whether to enable unit tests" ON)
 if (CMAKE_TEMPLATE_ENABLE_TEST)
-    message(STATUS "Unit tests enabled")
+    message(STATUS "Unit tests enabled = ${EXCLUDE_FROM_ALL}")
     enable_testing()
-    add_subdirectory(../third_party/googletest-release-1.10.0 EXCLUDE_FROM_ALL)
-    include_directories(../third_party/googletest-release-1.10.0/googletest/include)
+    add_subdirectory(third_party/googletest-release-1.10.0 EXCLUDE_FROM_ALL)
+    include_directories(third_party/googletest-release-1.10.0/googletest/include)
 
-    add_executable(test_atomic_hash_map atomic_hash_map_test.cc)
-    add_executable(test_atomic_rw_lock atomic_rw_lock_test.cc)
-    target_link_libraries(test_atomic_hash_map gtest gtest_main)
-    target_link_libraries(test_atomic_rw_lock gtest gtest_main)
+    add_executable(test_for_each for_each_test.cc)
+    target_link_libraries(test_for_each gtest gtest_main)
 
-    add_test(NAME test_atomic_hash_map COMMAND test_atomic_hash_map)
-    add_test(NAME test_atomic_rw_lock COMMAND test_atomic_rw_lock)
+    add_test(NAME test_for_each COMMAND test_for_each)
 endif()
 

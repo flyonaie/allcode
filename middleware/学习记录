@@ -1,0 +1,4 @@
+切记
+./script/install.sh
+source install/setup.bash
+在运行生成的app前运行build下source setup.bash

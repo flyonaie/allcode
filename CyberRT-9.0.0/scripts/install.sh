@@ -102,10 +102,10 @@ function build_fastdds() {
 
 function build_gfamily() {
   echo "############### Build Google Libs. ################"
-  download "https://github.com/gflags/gflags.git" "gflags"
-  download "https://github.com/google/glog.git" "glog"
-  download "https://github.com/google/googletest.git" "googletest"
-  download "https://github.com/protocolbuffers/protobuf.git" "protobuf"
+  #download "https://github.com/gflags/gflags.git" "gflags"
+  #download "https://github.com/google/glog.git" "glog"
+  #download "https://github.com/google/googletest.git" "googletest"
+  #download "https://github.com/protocolbuffers/protobuf.git" "protobuf"
 
   # gflags
   pushd "$CURRENT_PATH/../third_party/gflags/"
@@ -139,7 +139,7 @@ function build_gfamily() {
 
   # protobuf
   pushd "$CURRENT_PATH/../third_party/protobuf/"
-  git checkout v3.14.0
+  # git checkout v3.14.0
   cd cmake && mkdir -p build && cd build
   cmake -Dprotobuf_BUILD_SHARED_LIBS=ON -Dprotobuf_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=$INSTALL_PREFIX ..
   make install -j$(nproc)
@@ -150,8 +150,8 @@ function main() {
   echo "############### Install Third Party. ################"
   init
   build_setup
-  build_nlohmann_json
-  build_tinyxml2
+  # build_nlohmann_json
+  # build_tinyxml2
   build_gfamily
   build_fastdds
   return

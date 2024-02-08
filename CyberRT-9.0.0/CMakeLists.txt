@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5.1)
+cmake_minimum_required(VERSION 3.12)
 
 project(cyber VERSION 8.0.0) # Apollo Version
 
@@ -10,7 +10,7 @@ if(NOT CMAKE_BUILD_TYPE)
 endif()
 
 enable_language(ASM)
-
+message("----------------------: " ${CMAKE_MODULE_PATH})
 include(CMakePackageConfigHelpers)
 include(GNUInstallDirs)
 
@@ -23,6 +23,7 @@ else()
   message("### SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR} ${CROUTINE_FILE}")
 endif(${CMAKE_SYSTEM_PROCESSOR} STREQUAL "x86_64")
 
+message("cmake_module_path: " ${CMAKE_MODULE_PATH})
 find_package(Threads REQUIRED)
 find_package(PkgConfig REQUIRED)
 find_package(fastrtps REQUIRED)
@@ -172,10 +173,11 @@ target_link_libraries(${TARGET_NAME}
     atomic
 )
 
-add_subdirectory(cyber/mainboard)
-add_subdirectory(cyber/examples)
-add_subdirectory(cyber/python)
-add_subdirectory(cyber/tools)
+# add_subdirectory(cyber/mainboard)
+# add_subdirectory(cyber/examples)
+# add_subdirectory(cyber/myexamples)
+# add_subdirectory(cyber/python)
+# add_subdirectory(cyber/tools)
 # --------------------------------------------------------------
 #                      CPack
 # --------------------------------------------------------------
@@ -242,6 +244,8 @@ include(CPack)
 # --------------------------------------------------------------
 #                       package
 # --------------------------------------------------------------
+message("---------PROJECT_BINARY_DIR--------${PROJECT_BINARY_DIR}------------")
+message("---------CMAKE_INSTALL_DATADIR--------${CMAKE_INSTALL_DATADIR}------------")
 configure_file("cmake/${TARGET_NAME}.pc.in"
   "${PROJECT_BINARY_DIR}/pkgconfig/${TARGET_NAME}.pc" @ONLY)
 

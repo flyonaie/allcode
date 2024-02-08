@@ -1,0 +1,6 @@
+project(myexamples VERSION 1.0.0)
+add_executable(shm_transmitter_main shm_transmitter_main.cc)
+target_link_libraries(shm_transmitter_main
+    cyber
+    pthread
+)
